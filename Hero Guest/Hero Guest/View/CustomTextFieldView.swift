@@ -11,7 +11,7 @@ import UIKit
 class CustomTextFieldView: UIView {
     
     // Propiedades
-    private let iconImageViewSize: CGFloat = 50
+    private let iconImageViewSize: CGFloat = 25
 
     // Crear textField
     lazy var textField: UITextField = {
@@ -19,6 +19,8 @@ class CustomTextFieldView: UIView {
         
         // Configurar textField
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Email"
+        textField.backgroundColor = .red
         
         return textField
     }()
@@ -36,8 +38,11 @@ class CustomTextFieldView: UIView {
         return imageView
     }()
     
-    // MARK: - AwakeFromNib
-    override func awakeFromNib() {
+    // MARK: - Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
         // Colocar vistas
         addSubview(textField)
         addSubview(iconImageView)
@@ -45,7 +50,7 @@ class CustomTextFieldView: UIView {
         NSLayoutConstraint.activate([
             iconImageView.heightAnchor.constraint(equalToConstant: iconImageViewSize),
             iconImageView.widthAnchor.constraint(equalToConstant: iconImageViewSize),
-            iconImageView.leadingAnchor.constraint(equalTo: iconImageView.leadingAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
@@ -53,8 +58,12 @@ class CustomTextFieldView: UIView {
             textField.topAnchor.constraint(equalTo: topAnchor),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textField.leadingAnchor.constraint(equalTo: iconImageView.leadingAnchor)
+            textField.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10)
         ])
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
