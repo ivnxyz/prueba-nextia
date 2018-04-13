@@ -97,9 +97,27 @@ class SignInController: UIViewController {
         let button = UIButton(type: .system)
         
         // Configurar botón
-        button.setTitle("Conoce más de Hero Guest", for: .normal)
-        button.setTitleColor(APP_MAIN_COLOR, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Configurar titulo
+        let nameString = "Hero Guest"
+        let titleString = "Conoce más de "
+        
+        let attributedTitle = NSMutableAttributedString(string: titleString)
+        let attributedName = NSMutableAttributedString(string: nameString)
+        
+        // Configurar attributedTitle
+        attributedTitle.addAttribute(NSAttributedStringKey.foregroundColor, value: APP_MAIN_COLOR, range: NSMakeRange(0, titleString.count))
+        
+        // Configurar attributedName
+        attributedName.addAttribute(NSAttributedStringKey.foregroundColor, value: APP_SECONDARY_COLOR, range: NSMakeRange(0, nameString.count))
+        attributedName.addAttribute(NSAttributedStringKey.underlineStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(0, nameString.count))
+        
+        let combination = NSMutableAttributedString()
+        combination.append(attributedTitle)
+        combination.append(attributedName)
+        
+        button.setAttributedTitle(combination, for: .normal)
         
         return button
     }()
