@@ -20,7 +20,8 @@ class CustomTextFieldView: UIView {
         // Configurar textField
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Email"
-        textField.backgroundColor = .red
+        textField.textColor = APP_SECONDARY_COLOR
+        textField.tintColor = APP_MAIN_COLOR
         
         return textField
     }()

@@ -15,6 +15,7 @@
 		A6B79F1C20803B9A00660BBC /* Hero_GuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F1B20803B9A00660BBC /* Hero_GuestTests.swift */; };
 		A6B79F2720803B9A00660BBC /* Hero_GuestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F2620803B9A00660BBC /* Hero_GuestUITests.swift */; };
 		A6B79F3A20803FE000660BBC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F3920803FE000660BBC /* CustomTextFieldView.swift */; };
+		A6B79F3F20804C3100660BBC /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F3E20804C3100660BBC /* Globals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A6B79F2620803B9A00660BBC /* Hero_GuestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero_GuestUITests.swift; sourceTree = "<group>"; };
 		A6B79F2820803B9A00660BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6B79F3920803FE000660BBC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		A6B79F3E20804C3100660BBC /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		A6B79F0520803B9500660BBC /* Hero Guest */ = {
 			isa = PBXGroup;
 			children = (
+				A6B79F3D20804C2300660BBC /* Helper */,
 				A6B79F3420803BD500660BBC /* Model */,
 				A6B79F3520803BD900660BBC /* View */,
 				A6B79F3620803BDE00660BBC /* Controller */,
@@ -150,6 +153,14 @@
 				A6B79F0820803B9500660BBC /* SignInController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A6B79F3D20804C2300660BBC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A6B79F3E20804C3100660BBC /* Globals.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6B79F3F20804C3100660BBC /* Globals.swift in Sources */,
 				A6B79F0920803B9500660BBC /* SignInController.swift in Sources */,
 				A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */,
 				A6B79F3A20803FE000660BBC /* CustomTextFieldView.swift in Sources */,
