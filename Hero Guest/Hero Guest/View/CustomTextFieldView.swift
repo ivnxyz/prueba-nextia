@@ -19,7 +19,6 @@ class CustomTextFieldView: UIView {
         
         // Configurar textField
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Correo" // Solo para probar
         
         return textField
     }()
@@ -27,8 +26,6 @@ class CustomTextFieldView: UIView {
     // Crear imagen acompañando al textField
     lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
-        // Sólo para probar
-        imageView.image = #imageLiteral(resourceName: "mail_icon")
         
         // Configurar imageView
         imageView.contentMode = .scaleAspectFit
@@ -41,6 +38,15 @@ class CustomTextFieldView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+    
+    // Inicializar con un frame opcional
+    convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0), iconImage: UIImage, placeholder: String) {
+        self.init(frame: frame)
+        
+        // Configurar valores
+        textField.placeholder = placeholder
+        iconImageView.image = iconImage
         
         // Colocar vistas
         addSubview(textField)
@@ -57,7 +63,7 @@ class CustomTextFieldView: UIView {
             textField.topAnchor.constraint(equalTo: topAnchor),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textField.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10)
+            textField.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 16)
         ])
     }
     

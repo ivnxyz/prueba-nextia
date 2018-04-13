@@ -13,7 +13,7 @@ class SignInController: UIViewController {
     // MARK: - Elementos de UI
     
     lazy var mailTextFieldView: CustomTextFieldView = {
-        let textFieldView = CustomTextFieldView()
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "mail_icon"), placeholder: "Correo")
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,8 +30,8 @@ class SignInController: UIViewController {
         
         // Configurar elementos de UI
         NSLayoutConstraint.activate([
-            mailTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            mailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            mailTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            mailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             mailTextFieldView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             mailTextFieldView.heightAnchor.constraint(equalToConstant: 70)
         ])
