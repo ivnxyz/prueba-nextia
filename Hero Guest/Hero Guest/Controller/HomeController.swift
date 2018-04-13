@@ -85,6 +85,15 @@ class HomeController: UIViewController {
         configureTextFieldConstraints(textFieldView: phoneNumberTextFieldView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        // Observar notificaciones del teclado
+        registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // Dejar de observar notificaciones del teclado
+        deregisterFromKeyboardNotifications()
+    }
     
     // MARK: - Helper
     
@@ -122,8 +131,8 @@ extension HomeController {
     
     // Responder a la notificación del teclado
     @objc func keyboardWillShow(notification: Notification) {
-        // Dejar visibles las entradas de texto
-        let keyboardHeight = getKeyboardHeight(notification: notification)
+        // Centrar las entradas de texto
+        let keyboardHeight = getKeyboardHeight(notification: notification) - textFieldsStackView.frame.height
         
         // Animar view
         UIView.animate(withDuration: 0.1) {
