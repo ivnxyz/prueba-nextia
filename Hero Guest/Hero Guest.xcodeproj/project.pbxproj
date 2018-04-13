@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F0620803B9500660BBC /* AppDelegate.swift */; };
-		A6B79F0920803B9500660BBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F0820803B9500660BBC /* ViewController.swift */; };
+		A6B79F0920803B9500660BBC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F0820803B9500660BBC /* SignInController.swift */; };
 		A6B79F0C20803B9500660BBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B79F0A20803B9500660BBC /* Main.storyboard */; };
 		A6B79F0E20803B9900660BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B79F0D20803B9900660BBC /* Assets.xcassets */; };
 		A6B79F1120803B9900660BBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B79F0F20803B9900660BBC /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		A6B79F0320803B9500660BBC /* Hero Guest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hero Guest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B79F0620803B9500660BBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6B79F0820803B9500660BBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6B79F0820803B9500660BBC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		A6B79F0B20803B9500660BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6B79F0D20803B9900660BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6B79F1020803B9900660BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +97,10 @@
 		A6B79F0520803B9500660BBC /* Hero Guest */ = {
 			isa = PBXGroup;
 			children = (
+				A6B79F3420803BD500660BBC /* Model */,
+				A6B79F3520803BD900660BBC /* View */,
+				A6B79F3620803BDE00660BBC /* Controller */,
 				A6B79F0620803B9500660BBC /* AppDelegate.swift */,
-				A6B79F0820803B9500660BBC /* ViewController.swift */,
 				A6B79F0A20803B9500660BBC /* Main.storyboard */,
 				A6B79F0D20803B9900660BBC /* Assets.xcassets */,
 				A6B79F0F20803B9900660BBC /* LaunchScreen.storyboard */,
@@ -123,6 +125,28 @@
 				A6B79F2820803B9A00660BBC /* Info.plist */,
 			);
 			path = "Hero GuestUITests";
+			sourceTree = "<group>";
+		};
+		A6B79F3420803BD500660BBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6B79F3520803BD900660BBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6B79F3620803BDE00660BBC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6B79F0820803B9500660BBC /* SignInController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B79F0920803B9500660BBC /* ViewController.swift in Sources */,
+				A6B79F0920803B9500660BBC /* SignInController.swift in Sources */,
 				A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

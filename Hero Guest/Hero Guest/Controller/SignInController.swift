@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SignInController.swift
 //  Hero Guest
 //
 //  Created by Iván Martínez on 4/12/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignInController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
