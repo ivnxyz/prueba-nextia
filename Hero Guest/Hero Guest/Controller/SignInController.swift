@@ -20,6 +20,15 @@ class SignInController: UIViewController {
         
         return textFieldView
     }()
+    
+    lazy var passwordTextFieldView: CustomTextFieldView = {
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "lock_icon"), placeholder: "Contraseña")
+        
+        // Configurar textFieldView
+        textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textFieldView
+    }()
 
     // MARK: - ViewDidLoad
     
@@ -27,6 +36,7 @@ class SignInController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(mailTextFieldView)
+        view.addSubview(passwordTextFieldView)
         
         // Configurar elementos de UI
         NSLayoutConstraint.activate([
@@ -34,6 +44,13 @@ class SignInController: UIViewController {
             mailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             mailTextFieldView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             mailTextFieldView.heightAnchor.constraint(equalToConstant: 70)
+        ])
+        
+        NSLayoutConstraint.activate([
+            passwordTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            passwordTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            passwordTextFieldView.topAnchor.constraint(equalTo: mailTextFieldView.bottomAnchor),
+            passwordTextFieldView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
 
