@@ -99,6 +99,10 @@ class SignInController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Configurar vista
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
         // Configurar vistas
         view.addSubview(textFieldsStackView)
         view.addSubview(logoImageView)
@@ -216,6 +220,15 @@ extension SignInController {
             return 0
         }
         return keyboardSize.height
+    }
+    
+}
+
+extension SignInController {
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        mailTextFieldView.resignFirstResponder()
+        passwordTextFieldView.resignFirstResponder()
     }
     
 }

@@ -87,4 +87,11 @@ class CustomTextFieldView: UIView {
         }
     }
     
+    // MARK: - Helper
+    
+    override func resignFirstResponder() -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
