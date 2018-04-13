@@ -39,14 +39,39 @@ class SignInController: UIViewController {
         
         return stackView
     }()
+    
+    lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        
+        // Configurar imageView
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = #imageLiteral(resourceName: "littleman_logo")
+        
+        return imageView
+    }()
+    
+    lazy var recoverPasswordButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        // Configurar boton
+        button.setTitle("¿Olvidaste tu contraseña?", for: .normal)
+        button.setTitleColor(APP_GRAY_COLOR, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
 
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Configurar stackView
+        // Configurar vistas
         view.addSubview(textFieldsStackView)
+        view.addSubview(logoImageView)
+        view.addSubview(recoverPasswordButton)
         
         textFieldsStackView.addArrangedSubview(mailTextFieldView)
         textFieldsStackView.addArrangedSubview(passwordTextFieldView)
@@ -59,15 +84,29 @@ class SignInController: UIViewController {
         
         // Configurar layout de los textFields
         NSLayoutConstraint.activate([
-            mailTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            mailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            mailTextFieldView.heightAnchor.constraint(equalToConstant: 70)
+            mailTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            mailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            mailTextFieldView.heightAnchor.constraint(equalToConstant: 60)
         ])
 
         NSLayoutConstraint.activate([
-            passwordTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            passwordTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            passwordTextFieldView.heightAnchor.constraint(equalToConstant: 70)
+            passwordTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            passwordTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            passwordTextFieldView.heightAnchor.constraint(equalToConstant: 60)
+        ])
+        
+        // Configurar layout de logoImageView
+        NSLayoutConstraint.activate([
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            logoImageView.bottomAnchor.constraint(equalTo: textFieldsStackView.topAnchor, constant: 10),
+            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
+        
+        // Configurar botón para recuperar contraseña
+        NSLayoutConstraint.activate([
+            recoverPasswordButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 50), // Arreglar esto
+            recoverPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 
