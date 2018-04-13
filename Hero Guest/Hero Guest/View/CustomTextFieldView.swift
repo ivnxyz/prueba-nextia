@@ -14,6 +14,7 @@ class CustomTextFieldView: UIView {
     private let iconImageViewSize: CGFloat = 20
     private let iconImage: UIImage
     private let unactiveIconImage: UIImage
+    var textFieldDelegate: UITextFieldDelegate?
 
     // Crear textField
     lazy var textField: SignInTextField = {
@@ -21,6 +22,8 @@ class CustomTextFieldView: UIView {
         
         // Configurar textField
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.delegate = self.textFieldDelegate
+        textField.addTarget(self, action: #selector(textFieldEditingDidChange(_:)), for: UIControlEvents.editingChanged)
         
         return textField
     }()
@@ -73,6 +76,15 @@ class CustomTextFieldView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func textFieldEditingDidChange(_ textField: UITextField) {
+        // Cambiar el icono acompañando a la imagen
+        if let text = textField.text, text != "" {
+            iconImageView.image = iconImage
+        } else {
+            iconImageView.image = unactiveIconImage
+        }
     }
     
 }
