@@ -51,6 +51,17 @@ class HomeController: UIViewController {
         
         return stackView
     }()
+    
+    lazy var updateProfileButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        // Configurar botón
+        button.setTitle("Actualizar perfil", for: .normal)
+        button.setTitleColor(APP_MAIN_COLOR, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
 
     // MARK: - ViewDidLoad
     
@@ -63,6 +74,7 @@ class HomeController: UIViewController {
         
         // Colocar vistas
         view.addSubview(textFieldsStackView)
+        view.addSubview(updateProfileButton)
         
         // Colocar StackView
         textFieldsStackView.addArrangedSubview(mailTextFieldView)
@@ -83,6 +95,13 @@ class HomeController: UIViewController {
         
         // Configurar layout de phoneTextFieldView
         configureTextFieldConstraints(textFieldView: phoneNumberTextFieldView)
+        
+        // Configurar layout del botón para actualizar el perfil del usuario
+        NSLayoutConstraint.activate([
+            updateProfileButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor),
+            updateProfileButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            updateProfileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
