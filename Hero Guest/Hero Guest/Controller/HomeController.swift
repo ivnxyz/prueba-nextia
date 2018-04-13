@@ -57,6 +57,10 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Configurar tabGestureRecognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
         // Colocar vistas
         view.addSubview(textFieldsStackView)
         
@@ -91,6 +95,13 @@ class HomeController: UIViewController {
             textFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -textFieldHorizontalMargin),
             textFieldView.heightAnchor.constraint(equalToConstant: textFieldHeight)
         ])
+    }
+    
+    // Ignorar los campos de texto
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        _ = mailTextFieldView.resignFirstResponder()
+        _ = nameTextFieldView.resignFirstResponder()
+        _ = phoneNumberTextFieldView.resignFirstResponder()
     }
 
 }

@@ -109,7 +109,7 @@ class SignInController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Configurar vista
+        // Configurar tabGestureRecognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         
@@ -191,7 +191,6 @@ class SignInController: UIViewController {
     
     // MARK: - Iniciar sesión
     @objc func signInButtonPressed() {
-        print("Ok")
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()!
         present(viewController, animated: false, completion: nil)
