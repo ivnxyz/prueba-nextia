@@ -30,7 +30,7 @@ class SignInController: UIViewController {
     }()
     
     lazy var passwordTextFieldView: CustomTextFieldView = {
-        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "lock_icon"), unactiveIconImage: #imageLiteral(resourceName: "lock_icon_gray"), placeholder: "Correo", isSecureTextEntity: true)
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "lock_icon"), unactiveIconImage: #imageLiteral(resourceName: "lock_icon_gray"), placeholder: "Contraseña", isSecureTextEntity: true)
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
