@@ -62,6 +62,26 @@ class SignInController: UIViewController {
         
         return button
     }()
+    
+    lazy var signInButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        // Configurar botón
+        button.setTitle("Iniciar sesión", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 22
+        
+        // Configurar colores
+        button.setTitleColor(APP_SECONDARY_COLOR, for: .disabled)
+        button.setTitleColor(UIColor.white, for: .normal)
+        
+        button.backgroundColor = APP_GRAY_COLOR
+        
+        button.isEnabled = false
+        
+        return button
+    }()
 
     // MARK: - ViewDidLoad
     
@@ -72,6 +92,7 @@ class SignInController: UIViewController {
         view.addSubview(textFieldsStackView)
         view.addSubview(logoImageView)
         view.addSubview(recoverPasswordButton)
+        view.addSubview(signInButton)
         
         textFieldsStackView.addArrangedSubview(mailTextFieldView)
         textFieldsStackView.addArrangedSubview(passwordTextFieldView)
@@ -103,9 +124,18 @@ class SignInController: UIViewController {
             logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
         
+        // Configurar botón para iniciar sesión
+        NSLayoutConstraint.activate([
+            signInButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 90),
+            signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
+            signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+        ])
+        
         // Configurar botón para recuperar contraseña
         NSLayoutConstraint.activate([
-            recoverPasswordButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 50), // Arreglar esto
+            recoverPasswordButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 25),
+            recoverPasswordButton.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -25),
             recoverPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
