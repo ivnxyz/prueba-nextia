@@ -94,3 +94,50 @@ class HomeController: UIViewController {
     }
 
 }
+
+extension HomeController {
+    
+    // Observar cuando el teclado aparece o desaparece
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    // Dejar de observar notificaciones del teclado
+    func deregisterFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    // Responder a la notificación del teclado
+    @objc func keyboardWillShow(notification: Notification) {
+        // Dejar visibles las entradas de texto
+        let keyboardHeight = getKeyboardHeight(notification: notification)
+        
+        // Animar view
+        UIView.animate(withDuration: 0.1) {
+            self.view.frame = CGRect(x: 0, y: -keyboardHeight, width: self.view.frame.width, height: self.view.frame.height)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        // Animar view
+        UIView.animate(withDuration: 0.1) {
+            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // Calcular el alto del teclado usando la notificación
+    func getKeyboardHeight(notification: Notification) -> CGFloat {
+        guard let userInfo = notification.userInfo else {
+            return 0
+        }
+        guard let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size else {
+            return 0
+        }
+        return keyboardSize.height
+    }
+    
+}
