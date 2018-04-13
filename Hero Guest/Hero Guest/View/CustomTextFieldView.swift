@@ -8,21 +8,26 @@
 
 import UIKit
 
+protocol CustomTextFieldViewDelegate {
+    func textFieldEditingDidChange(_ customTextFieldView: CustomTextFieldView)
+}
+
 class CustomTextFieldView: UIView {
     
     // Propiedades
     private let iconImageViewSize: CGFloat = 20
     private let iconImage: UIImage
     private let unactiveIconImage: UIImage
-    var textFieldDelegate: UITextFieldDelegate?
-
+    var identifier = ""
+    var textFieldText = ""
+    var delegate: CustomTextFieldViewDelegate?
+    
     // Crear textField
     lazy var textField: SignInTextField = {
         let textField = SignInTextField()
         
         // Configurar textField
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.delegate = self.textFieldDelegate
         textField.addTarget(self, action: #selector(textFieldEditingDidChange(_:)), for: UIControlEvents.editingChanged)
         
         return textField
@@ -48,11 +53,12 @@ class CustomTextFieldView: UIView {
     }
     
     // Inicializar con un frame opcional
-    convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0), iconImage: UIImage, unactiveIconImage: UIImage,placeholder: String) {
+    convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0), iconImage: UIImage, unactiveIconImage: UIImage,placeholder: String, isSecureTextEntity: Bool = false) {
         self.init(frame: frame, iconImage: iconImage, unactiveIconImage: unactiveIconImage)
         
         // Configurar valores
         textField.placeholder = placeholder
+        textField.isSecureTextEntry = isSecureTextEntity
         iconImageView.image = unactiveIconImage
         
         // Colocar vistas
@@ -85,6 +91,12 @@ class CustomTextFieldView: UIView {
         } else {
             iconImageView.image = unactiveIconImage
         }
+        
+        // Actualizar texto
+        textFieldText = (textField.text != nil) ? textField.text! : ""
+        
+        // Llamar al delegado
+        delegate?.textFieldEditingDidChange(self)
     }
     
     // MARK: - Helper

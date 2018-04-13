@@ -10,6 +10,9 @@ import UIKit
 
 class SignInController: UIViewController {
     
+    private let mailTextFieldIdentifier = "mailTextField"
+    private let passwordTextFieldIdentifier = "passwordTextField"
+    
     // MARK: - Elementos de UI
     
     lazy var mailTextFieldView: CustomTextFieldView = {
@@ -17,15 +20,19 @@ class SignInController: UIViewController {
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        textFieldView.identifier = mailTextFieldIdentifier
+        textFieldView.delegate = self
         
         return textFieldView
     }()
     
     lazy var passwordTextFieldView: CustomTextFieldView = {
-        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "lock_icon"), unactiveIconImage: #imageLiteral(resourceName: "lock_icon_gray"), placeholder: "Correo")
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "lock_icon"), unactiveIconImage: #imageLiteral(resourceName: "lock_icon_gray"), placeholder: "Correo", isSecureTextEntity: true)
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        textFieldView.identifier = passwordTextFieldIdentifier
+        textFieldView.delegate = self
         
         return textFieldView
     }()
@@ -194,7 +201,8 @@ extension SignInController {
     
     // Responder a la notificación del teclado
     @objc func keyboardWillShow(notification: Notification) {
-        let keyboardHeight = getKeyboardHeight(notification: notification) - textFieldsStackView.frame.height
+        // Centrar las entradas de texto y dejar visible el botón para recuperar la contraseña
+        let keyboardHeight = getKeyboardHeight(notification: notification) - textFieldsStackView.frame.height - signInButton.frame.height + (recoverPasswordButton.frame.height/2)
         
         // Animar view
         UIView.animate(withDuration: 0.1) {
@@ -227,8 +235,18 @@ extension SignInController {
 extension SignInController {
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        mailTextFieldView.resignFirstResponder()
-        passwordTextFieldView.resignFirstResponder()
+        _ = mailTextFieldView.resignFirstResponder()
+        _ = passwordTextFieldView.resignFirstResponder()
+    }
+    
+}
+
+extension SignInController: CustomTextFieldViewDelegate {
+    
+    // MARK: - CustomTextFieldViewDelegate
+    
+    func textFieldEditingDidChange(_ customTextFieldView: CustomTextFieldView) {
+        print(customTextFieldView.textFieldText)
     }
     
 }
