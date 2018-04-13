@@ -16,6 +16,7 @@
 		A6B79F2720803B9A00660BBC /* Hero_GuestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F2620803B9A00660BBC /* Hero_GuestUITests.swift */; };
 		A6B79F3A20803FE000660BBC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F3920803FE000660BBC /* CustomTextFieldView.swift */; };
 		A6B79F3F20804C3100660BBC /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F3E20804C3100660BBC /* Globals.swift */; };
+		A6B79F4320804F3400660BBC /* SignInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F4220804F3400660BBC /* SignInTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A6B79F2820803B9A00660BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6B79F3920803FE000660BBC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		A6B79F3E20804C3100660BBC /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		A6B79F4220804F3400660BBC /* SignInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B79F3920803FE000660BBC /* CustomTextFieldView.swift */,
+				A6B79F4220804F3400660BBC /* SignInTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				A6B79F3F20804C3100660BBC /* Globals.swift in Sources */,
 				A6B79F0920803B9500660BBC /* SignInController.swift in Sources */,
 				A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */,
+				A6B79F4320804F3400660BBC /* SignInTextField.swift in Sources */,
 				A6B79F3A20803FE000660BBC /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

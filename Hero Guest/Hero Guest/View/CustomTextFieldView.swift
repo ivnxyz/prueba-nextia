@@ -14,14 +14,12 @@ class CustomTextFieldView: UIView {
     private let iconImageViewSize: CGFloat = 25
 
     // Crear textField
-    lazy var textField: UITextField = {
-        let textField = UITextField()
+    lazy var textField: SignInTextField = {
+        let textField = SignInTextField()
         
         // Configurar textField
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Email"
-        textField.textColor = APP_SECONDARY_COLOR
-        textField.tintColor = APP_MAIN_COLOR
+        textField.placeholder = "Correo" // Solo para probar
         
         return textField
     }()
