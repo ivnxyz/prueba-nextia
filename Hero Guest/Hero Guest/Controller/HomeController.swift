@@ -16,7 +16,7 @@ class HomeController: UIViewController {
     // MARK: - Elementos de UI
     
     lazy var mailTextFieldView: CustomTextFieldView = {
-        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "mail_icon"), unactiveIconImage: #imageLiteral(resourceName: "mail_icon_gray"), placeholder: "Correo", keyboardType: UIKeyboardType.emailAddress)
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "mail_icon"), unactiveIconImage: #imageLiteral(resourceName: "mail_icon_gray"), placeholder: "Correo", keyboardType: UIKeyboardType.emailAddress, isTextFieldEnabled: false)
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false

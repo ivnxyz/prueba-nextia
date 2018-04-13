@@ -59,7 +59,8 @@ class CustomTextFieldView: UIView {
                      unactiveIconImage: UIImage,
                      placeholder: String,
                      isSecureTextEntity: Bool = false,
-                     keyboardType: UIKeyboardType = .default) {
+                     keyboardType: UIKeyboardType = .default,
+                     isTextFieldEnabled: Bool = true) {
         self.init(frame: frame, iconImage: iconImage, unactiveIconImage: unactiveIconImage)
         
         // Configurar valores
@@ -67,6 +68,7 @@ class CustomTextFieldView: UIView {
         textField.isSecureTextEntry = isSecureTextEntity
         textField.keyboardType = keyboardType
         textField.autocorrectionType = .no
+        textField.isEnabled = isTextFieldEnabled
         iconImageView.image = unactiveIconImage
         
         // Colocar vistas
