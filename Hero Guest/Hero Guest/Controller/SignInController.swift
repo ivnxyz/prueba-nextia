@@ -13,7 +13,7 @@ class SignInController: UIViewController {
     // MARK: - Elementos de UI
     
     lazy var mailTextFieldView: CustomTextFieldView = {
-        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "mail_icon"), placeholder: "Correo")
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "mail_icon"), unactiveIconImage: #imageLiteral(resourceName: "mail_icon_gray"), placeholder: "Correo")
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +22,7 @@ class SignInController: UIViewController {
     }()
     
     lazy var passwordTextFieldView: CustomTextFieldView = {
-        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "lock_icon"), placeholder: "Contraseña")
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "lock_icon"), unactiveIconImage: #imageLiteral(resourceName: "lock_icon_gray"), placeholder: "Correo")
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false

@@ -12,6 +12,8 @@ class CustomTextFieldView: UIView {
     
     // Propiedades
     private let iconImageViewSize: CGFloat = 25
+    private let iconImage: UIImage
+    private let unactiveIconImage: UIImage
 
     // Crear textField
     lazy var textField: SignInTextField = {
@@ -36,17 +38,19 @@ class CustomTextFieldView: UIView {
     
     // MARK: - Init
     
-    override init(frame: CGRect) {
+    private init(frame: CGRect, iconImage: UIImage, unactiveIconImage: UIImage) {
+        self.iconImage = iconImage
+        self.unactiveIconImage = unactiveIconImage
         super.init(frame: frame)
     }
     
     // Inicializar con un frame opcional
-    convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0), iconImage: UIImage, placeholder: String) {
-        self.init(frame: frame)
+    convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0), iconImage: UIImage, unactiveIconImage: UIImage,placeholder: String) {
+        self.init(frame: frame, iconImage: iconImage, unactiveIconImage: unactiveIconImage)
         
         // Configurar valores
         textField.placeholder = placeholder
-        iconImageView.image = iconImage
+        iconImageView.image = unactiveIconImage
         
         // Colocar vistas
         addSubview(textField)
