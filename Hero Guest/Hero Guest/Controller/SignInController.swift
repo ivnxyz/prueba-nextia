@@ -113,6 +113,9 @@ class SignInController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         
+        // Configurar botón
+        signInButton.addTarget(self, action: #selector(self.signInButtonPressed), for: .touchUpInside)
+        
         // Configurar vistas
         view.addSubview(textFieldsStackView)
         view.addSubview(logoImageView)
@@ -184,6 +187,14 @@ class SignInController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         deregisterFromKeyboardNotifications()
+    }
+    
+    // MARK: - Iniciar sesión
+    @objc func signInButtonPressed() {
+        print("Ok")
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()!
+        present(viewController, animated: false, completion: nil)
     }
     
 }

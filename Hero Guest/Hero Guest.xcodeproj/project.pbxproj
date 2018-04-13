@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A612650D208108D00052D6B9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A612650C208108D00052D6B9 /* Home.storyboard */; };
+		A612650F208108FE0052D6B9 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A612650E208108FE0052D6B9 /* HomeController.swift */; };
 		A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F0620803B9500660BBC /* AppDelegate.swift */; };
 		A6B79F0920803B9500660BBC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F0820803B9500660BBC /* SignInController.swift */; };
 		A6B79F0C20803B9500660BBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B79F0A20803B9500660BBC /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A612650C208108D00052D6B9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		A612650E208108FE0052D6B9 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		A6B79F0320803B9500660BBC /* Hero Guest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hero Guest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B79F0620803B9500660BBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B79F0820803B9500660BBC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				A6B79F3620803BDE00660BBC /* Controller */,
 				A6B79F0620803B9500660BBC /* AppDelegate.swift */,
 				A6B79F0A20803B9500660BBC /* Main.storyboard */,
+				A612650C208108D00052D6B9 /* Home.storyboard */,
 				A6B79F0D20803B9900660BBC /* Assets.xcassets */,
 				A6B79F0F20803B9900660BBC /* LaunchScreen.storyboard */,
 				A6B79F1220803B9A00660BBC /* Info.plist */,
@@ -154,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B79F0820803B9500660BBC /* SignInController.swift */,
+				A612650E208108FE0052D6B9 /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 				A6B79F1120803B9900660BBC /* LaunchScreen.storyboard in Resources */,
 				A6B79F0E20803B9900660BBC /* Assets.xcassets in Resources */,
 				A6B79F0C20803B9500660BBC /* Main.storyboard in Resources */,
+				A612650D208108D00052D6B9 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +306,7 @@
 			files = (
 				A6B79F3F20804C3100660BBC /* Globals.swift in Sources */,
 				A6B79F0920803B9500660BBC /* SignInController.swift in Sources */,
+				A612650F208108FE0052D6B9 /* HomeController.swift in Sources */,
 				A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */,
 				A6B79F4320804F3400660BBC /* SignInTextField.swift in Sources */,
 				A6B79F3A20803FE000660BBC /* CustomTextFieldView.swift in Sources */,
