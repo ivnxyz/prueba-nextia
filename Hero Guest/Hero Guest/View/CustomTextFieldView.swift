@@ -20,6 +20,7 @@ class CustomTextFieldView: UIView {
     private let unactiveIconImage: UIImage
     var identifier = ""
     var textFieldText = ""
+    var isTextEmpty = true
     var delegate: CustomTextFieldViewDelegate?
     
     // Crear textField
@@ -88,8 +89,10 @@ class CustomTextFieldView: UIView {
         // Cambiar el icono acompañando a la imagen
         if let text = textField.text, text != "" {
             iconImageView.image = iconImage
+            isTextEmpty = false
         } else {
             iconImageView.image = unactiveIconImage
+            isTextEmpty = true
         }
         
         // Actualizar texto

@@ -13,6 +13,9 @@ class SignInController: UIViewController {
     private let mailTextFieldIdentifier = "mailTextField"
     private let passwordTextFieldIdentifier = "passwordTextField"
     
+    private var isMailTextFieldEmpty = true
+    private var isPasswordTextFieldEmpty = true
+    
     // MARK: - Elementos de UI
     
     lazy var mailTextFieldView: CustomTextFieldView = {
@@ -246,7 +249,22 @@ extension SignInController: CustomTextFieldViewDelegate {
     // MARK: - CustomTextFieldViewDelegate
     
     func textFieldEditingDidChange(_ customTextFieldView: CustomTextFieldView) {
-        print(customTextFieldView.textFieldText)
+        if customTextFieldView.identifier == mailTextFieldIdentifier {
+            // Actualizar el estado del
+            isMailTextFieldEmpty = customTextFieldView.isTextEmpty
+        } else if customTextFieldView.identifier == passwordTextFieldIdentifier {
+            // Actualizar el estado del textField
+            isPasswordTextFieldEmpty = customTextFieldView.isTextEmpty
+        }
+        
+        // Actualizar el estado del botón
+        if !isMailTextFieldEmpty && !isPasswordTextFieldEmpty {
+            signInButton.isEnabled = true
+            signInButton.backgroundColor = APP_MAIN_COLOR
+        } else {
+            signInButton.isEnabled = false
+            signInButton.backgroundColor = APP_GRAY_COLOR
+        }
     }
     
 }
