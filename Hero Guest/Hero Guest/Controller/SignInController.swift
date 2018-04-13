@@ -82,6 +82,17 @@ class SignInController: UIViewController {
         
         return button
     }()
+    
+    lazy var moreInfoButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        // Configurar botón
+        button.setTitle("Conoce más de Hero Guest", for: .normal)
+        button.setTitleColor(APP_MAIN_COLOR, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
 
     // MARK: - ViewDidLoad
     
@@ -93,6 +104,7 @@ class SignInController: UIViewController {
         view.addSubview(logoImageView)
         view.addSubview(recoverPasswordButton)
         view.addSubview(signInButton)
+        view.addSubview(moreInfoButton)
         
         textFieldsStackView.addArrangedSubview(mailTextFieldView)
         textFieldsStackView.addArrangedSubview(passwordTextFieldView)
@@ -124,7 +136,7 @@ class SignInController: UIViewController {
             logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
         
-        // Configurar botón para iniciar sesión
+        // Configurar layout del botón para iniciar sesión
         NSLayoutConstraint.activate([
             signInButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 90),
             signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
@@ -132,11 +144,18 @@ class SignInController: UIViewController {
             signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
         
-        // Configurar botón para recuperar contraseña
+        // Configurar layout del botón para recuperar contraseña
         NSLayoutConstraint.activate([
             recoverPasswordButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 25),
             recoverPasswordButton.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -25),
             recoverPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        // Configurar layout del botón para obtener más información
+        NSLayoutConstraint.activate([
+            moreInfoButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 25),
+            moreInfoButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            moreInfoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 
