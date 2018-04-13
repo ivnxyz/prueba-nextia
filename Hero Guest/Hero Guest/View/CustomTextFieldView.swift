@@ -11,7 +11,7 @@ import UIKit
 class CustomTextFieldView: UIView {
     
     // Propiedades
-    private let iconImageViewSize: CGFloat = 25
+    private let iconImageViewSize: CGFloat = 20
     private let iconImage: UIImage
     private let unactiveIconImage: UIImage
 
