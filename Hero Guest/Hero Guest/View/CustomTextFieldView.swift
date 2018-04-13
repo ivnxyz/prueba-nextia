@@ -54,12 +54,19 @@ class CustomTextFieldView: UIView {
     }
     
     // Inicializar con un frame opcional
-    convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0), iconImage: UIImage, unactiveIconImage: UIImage,placeholder: String, isSecureTextEntity: Bool = false) {
+    convenience init(frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0),
+                     iconImage: UIImage,
+                     unactiveIconImage: UIImage,
+                     placeholder: String,
+                     isSecureTextEntity: Bool = false,
+                     keyboardType: UIKeyboardType = .default) {
         self.init(frame: frame, iconImage: iconImage, unactiveIconImage: unactiveIconImage)
         
         // Configurar valores
         textField.placeholder = placeholder
         textField.isSecureTextEntry = isSecureTextEntity
+        textField.keyboardType = keyboardType
+        textField.autocorrectionType = .no
         iconImageView.image = unactiveIconImage
         
         // Colocar vistas
