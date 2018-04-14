@@ -22,6 +22,8 @@
 		A6B79F3F20804C3100660BBC /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F3E20804C3100660BBC /* Globals.swift */; };
 		A6B79F4320804F3400660BBC /* SignInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F4220804F3400660BBC /* SignInTextField.swift */; };
 		A6E911012081995800D84E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6E911002081995800D84E32 /* GoogleService-Info.plist */; };
+		A6E911042081AE1B00D84E32 /* FirebaseAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E911032081AE1B00D84E32 /* FirebaseAuthClient.swift */; };
+		A6E911062081B8FA00D84E32 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E911052081B8FA00D84E32 /* ErrorHandler.swift */; };
 		BDFC37962567AB701DF1513C /* Pods_Hero_GuestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E414355ED1804AD6844B6A1 /* Pods_Hero_GuestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		A6B79F3E20804C3100660BBC /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		A6B79F4220804F3400660BBC /* SignInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextField.swift; sourceTree = "<group>"; };
 		A6E911002081995800D84E32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../recursos/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A6E911032081AE1B00D84E32 /* FirebaseAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthClient.swift; sourceTree = "<group>"; };
+		A6E911052081B8FA00D84E32 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		AF8C3CE80C6B0E5F9DBCE91F /* Pods-Hero Guest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero Guest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hero Guest/Pods-Hero Guest.release.xcconfig"; sourceTree = "<group>"; };
 		CF7F6BEE9C9ECA82E02F54CF /* Pods-Hero GuestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero GuestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hero GuestUITests/Pods-Hero GuestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B9B095379A14AC95928B59 /* Pods-Hero GuestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero GuestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hero GuestTests/Pods-Hero GuestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		A6B79F0520803B9500660BBC /* Hero Guest */ = {
 			isa = PBXGroup;
 			children = (
+				A6E911022081ADE500D84E32 /* Networking */,
 				A6B79F3D20804C2300660BBC /* Helper */,
 				A6B79F3420803BD500660BBC /* Model */,
 				A6B79F3520803BD900660BBC /* View */,
@@ -211,8 +216,17 @@
 			isa = PBXGroup;
 			children = (
 				A6B79F3E20804C3100660BBC /* Globals.swift */,
+				A6E911052081B8FA00D84E32 /* ErrorHandler.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A6E911022081ADE500D84E32 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A6E911032081AE1B00D84E32 /* FirebaseAuthClient.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,7 +450,9 @@
 				A612650F208108FE0052D6B9 /* HomeController.swift in Sources */,
 				A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */,
 				A6B79F4320804F3400660BBC /* SignInTextField.swift in Sources */,
+				A6E911062081B8FA00D84E32 /* ErrorHandler.swift in Sources */,
 				A6B79F3A20803FE000660BBC /* CustomTextFieldView.swift in Sources */,
+				A6E911042081AE1B00D84E32 /* FirebaseAuthClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +630,10 @@
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero Guest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-Guest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -631,7 +650,10 @@
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero Guest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-Guest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -648,7 +670,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -666,7 +692,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -683,7 +713,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -700,7 +734,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

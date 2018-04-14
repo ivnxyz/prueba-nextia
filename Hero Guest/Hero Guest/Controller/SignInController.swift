@@ -216,9 +216,18 @@ class SignInController: UIViewController {
     
     // MARK: - Iniciar sesión
     @objc func signInButtonPressed() {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()!
-        present(viewController, animated: false, completion: nil)
+        let firebaseClient = FirebaseAuthClient()
+        
+        firebaseClient.signInWith(email: mailTextFieldView.textFieldText, password: passwordTextFieldView.textFieldText) { (user, error)  in
+            guard let user = user else {
+                // Manejar error
+                ErrorHandler.handle(error, from: self)
+                return
+            }
+            
+            // Mostrar alerta para que el usuario revise su correo
+            print(user.isEmailVerified)
+        }
     }
     
 }
