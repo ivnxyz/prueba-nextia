@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AE9FC727076766E149E6450 /* Pods_Hero_Guest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928AB75EFF70002B4B38B1A3 /* Pods_Hero_Guest.framework */; };
+		37CE98CDC4FCDF02942EB1B0 /* Pods_Hero_GuestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F60845020C4E69E9B6793A9 /* Pods_Hero_GuestUITests.framework */; };
 		A612650D208108D00052D6B9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A612650C208108D00052D6B9 /* Home.storyboard */; };
 		A612650F208108FE0052D6B9 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A612650E208108FE0052D6B9 /* HomeController.swift */; };
 		A6B79F0720803B9500660BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F0620803B9500660BBC /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 		A6B79F3A20803FE000660BBC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F3920803FE000660BBC /* CustomTextFieldView.swift */; };
 		A6B79F3F20804C3100660BBC /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F3E20804C3100660BBC /* Globals.swift */; };
 		A6B79F4320804F3400660BBC /* SignInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B79F4220804F3400660BBC /* SignInTextField.swift */; };
+		A6E911012081995800D84E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6E911002081995800D84E32 /* GoogleService-Info.plist */; };
+		BDFC37962567AB701DF1513C /* Pods_Hero_GuestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E414355ED1804AD6844B6A1 /* Pods_Hero_GuestTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0142455FD36F62F2D10AD744 /* Pods-Hero GuestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero GuestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hero GuestTests/Pods-Hero GuestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E414355ED1804AD6844B6A1 /* Pods_Hero_GuestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hero_GuestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F60845020C4E69E9B6793A9 /* Pods_Hero_GuestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hero_GuestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		909CA2DC30E6A36C62177EF4 /* Pods-Hero GuestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero GuestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hero GuestUITests/Pods-Hero GuestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		928AB75EFF70002B4B38B1A3 /* Pods_Hero_Guest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hero_Guest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A612650C208108D00052D6B9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A612650E208108FE0052D6B9 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		A6B79F0320803B9500660BBC /* Hero Guest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hero Guest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +66,11 @@
 		A6B79F3920803FE000660BBC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 		A6B79F3E20804C3100660BBC /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		A6B79F4220804F3400660BBC /* SignInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextField.swift; sourceTree = "<group>"; };
+		A6E911002081995800D84E32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../recursos/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF8C3CE80C6B0E5F9DBCE91F /* Pods-Hero Guest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero Guest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hero Guest/Pods-Hero Guest.release.xcconfig"; sourceTree = "<group>"; };
+		CF7F6BEE9C9ECA82E02F54CF /* Pods-Hero GuestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero GuestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hero GuestUITests/Pods-Hero GuestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6B9B095379A14AC95928B59 /* Pods-Hero GuestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero GuestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hero GuestTests/Pods-Hero GuestTests.release.xcconfig"; sourceTree = "<group>"; };
+		F4B5219644CDD18FA9CD45CE /* Pods-Hero Guest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hero Guest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hero Guest/Pods-Hero Guest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE9FC727076766E149E6450 /* Pods_Hero_Guest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFC37962567AB701DF1513C /* Pods_Hero_GuestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37CE98CDC4FCDF02942EB1B0 /* Pods_Hero_GuestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021C6958479BF23A536BA27C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4B5219644CDD18FA9CD45CE /* Pods-Hero Guest.debug.xcconfig */,
+				AF8C3CE80C6B0E5F9DBCE91F /* Pods-Hero Guest.release.xcconfig */,
+				0142455FD36F62F2D10AD744 /* Pods-Hero GuestTests.debug.xcconfig */,
+				E6B9B095379A14AC95928B59 /* Pods-Hero GuestTests.release.xcconfig */,
+				CF7F6BEE9C9ECA82E02F54CF /* Pods-Hero GuestUITests.debug.xcconfig */,
+				909CA2DC30E6A36C62177EF4 /* Pods-Hero GuestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		206BC45036E43814EFEDB435 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				928AB75EFF70002B4B38B1A3 /* Pods_Hero_Guest.framework */,
+				0E414355ED1804AD6844B6A1 /* Pods_Hero_GuestTests.framework */,
+				2F60845020C4E69E9B6793A9 /* Pods_Hero_GuestUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A6B79EFA20803B9500660BBC = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +131,8 @@
 				A6B79F1A20803B9A00660BBC /* Hero GuestTests */,
 				A6B79F2520803B9A00660BBC /* Hero GuestUITests */,
 				A6B79F0420803B9500660BBC /* Products */,
+				021C6958479BF23A536BA27C /* Pods */,
+				206BC45036E43814EFEDB435 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +159,7 @@
 				A6B79F0D20803B9900660BBC /* Assets.xcassets */,
 				A6B79F0F20803B9900660BBC /* LaunchScreen.storyboard */,
 				A6B79F1220803B9A00660BBC /* Info.plist */,
+				A6E911002081995800D84E32 /* GoogleService-Info.plist */,
 			);
 			path = "Hero Guest";
 			sourceTree = "<group>";
@@ -179,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6B79F2B20803B9A00660BBC /* Build configuration list for PBXNativeTarget "Hero Guest" */;
 			buildPhases = (
+				7ACF28D80E35A8A79BB9A4C8 /* [CP] Check Pods Manifest.lock */,
 				A6B79EFF20803B9500660BBC /* Sources */,
 				A6B79F0020803B9500660BBC /* Frameworks */,
 				A6B79F0120803B9500660BBC /* Resources */,
+				7091FDFCB5E1E61290A8585F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6B79F2E20803B9A00660BBC /* Build configuration list for PBXNativeTarget "Hero GuestTests" */;
 			buildPhases = (
+				238577A5B5906DEF43D23645 /* [CP] Check Pods Manifest.lock */,
 				A6B79F1320803B9A00660BBC /* Sources */,
 				A6B79F1420803B9A00660BBC /* Frameworks */,
 				A6B79F1520803B9A00660BBC /* Resources */,
@@ -214,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6B79F3120803B9A00660BBC /* Build configuration list for PBXNativeTarget "Hero GuestUITests" */;
 			buildPhases = (
+				509FC4A4C8A33BF4657C15BA /* [CP] Check Pods Manifest.lock */,
 				A6B79F1E20803B9A00660BBC /* Sources */,
 				A6B79F1F20803B9A00660BBC /* Frameworks */,
 				A6B79F2020803B9A00660BBC /* Resources */,
@@ -278,6 +325,7 @@
 			files = (
 				A6B79F1120803B9900660BBC /* LaunchScreen.storyboard in Resources */,
 				A6B79F0E20803B9900660BBC /* Assets.xcassets in Resources */,
+				A6E911012081995800D84E32 /* GoogleService-Info.plist in Resources */,
 				A6B79F0C20803B9500660BBC /* Main.storyboard in Resources */,
 				A612650D208108D00052D6B9 /* Home.storyboard in Resources */,
 			);
@@ -298,6 +346,85 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		238577A5B5906DEF43D23645 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hero GuestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		509FC4A4C8A33BF4657C15BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hero GuestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7091FDFCB5E1E61290A8585F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hero Guest/Pods-Hero Guest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hero Guest/Pods-Hero Guest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7ACF28D80E35A8A79BB9A4C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hero Guest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6B79EFF20803B9500660BBC /* Sources */ = {
@@ -480,16 +607,14 @@
 		};
 		A6B79F2C20803B9A00660BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4B5219644CDD18FA9CD45CE /* Pods-Hero Guest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero Guest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-Guest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -499,16 +624,14 @@
 		};
 		A6B79F2D20803B9A00660BBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF8C3CE80C6B0E5F9DBCE91F /* Pods-Hero Guest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero Guest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-Guest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -518,17 +641,14 @@
 		};
 		A6B79F2F20803B9A00660BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0142455FD36F62F2D10AD744 /* Pods-Hero GuestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -539,17 +659,14 @@
 		};
 		A6B79F3020803B9A00660BBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6B9B095379A14AC95928B59 /* Pods-Hero GuestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -560,16 +677,13 @@
 		};
 		A6B79F3220803B9A00660BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF7F6BEE9C9ECA82E02F54CF /* Pods-Hero GuestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -580,16 +694,13 @@
 		};
 		A6B79F3320803B9A00660BBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 909CA2DC30E6A36C62177EF4 /* Pods-Hero GuestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W288ESV4DF;
 				INFOPLIST_FILE = "Hero GuestUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.aulab.Hero-GuestUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
