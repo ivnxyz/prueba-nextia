@@ -167,8 +167,8 @@ class HomeController: UIViewController {
     }
     
     @objc func updateUserProfile(_ sender: UIButton) {
-        let name = nameTextFieldView.textFieldText
-        let phone = phoneNumberTextFieldView.textFieldText
+        let name = nameTextFieldView.getText()
+        let phone = phoneNumberTextFieldView.getText()
         
         // Actualizar perfil del usuario
         if let user = Auth.auth().currentUser {

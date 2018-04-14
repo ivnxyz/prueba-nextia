@@ -234,7 +234,11 @@ class SignInController: UIViewController {
     @objc func signInButtonPressed() {
         let firebaseClient = FirebaseAuthClient()
         
-        firebaseClient.signInWith(email: mailTextFieldView.textFieldText, password: passwordTextFieldView.textFieldText) { (user, error)  in
+        // Si el usuario no escribió alguno de los campos usamos un String vacío para que Firebase maneje el caso de error
+        let email = mailTextFieldView.getText() != nil ? mailTextFieldView.getText()! : ""
+        let password = passwordTextFieldView.getText() != nil ? passwordTextFieldView.getText()! : ""
+        
+        firebaseClient.signInWith(email: email, password: password) { (user, error)  in
             guard let user = user else {
                 // Manejar error
                 ErrorHandler.handle(error, from: self)

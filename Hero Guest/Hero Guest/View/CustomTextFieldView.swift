@@ -19,7 +19,6 @@ class CustomTextFieldView: UIView {
     private let iconImage: UIImage
     private let unactiveIconImage: UIImage
     var identifier = ""
-    var textFieldText = ""
     var isTextEmpty = true
     var delegate: CustomTextFieldViewDelegate?
     
@@ -104,9 +103,6 @@ class CustomTextFieldView: UIView {
             isTextEmpty = true
         }
         
-        // Actualizar texto
-        textFieldText = (textField.text != nil) ? textField.text! : ""
-        
         // Llamar al delegado
         delegate?.textFieldEditingDidChange(self)
     }
@@ -120,8 +116,11 @@ class CustomTextFieldView: UIView {
     
     func set(text: String) {
         textField.text = text
-        textFieldText = text
         iconImageView.image = iconImage
+    }
+    
+    func getText() -> String? {
+        return textField.text
     }
     
 }

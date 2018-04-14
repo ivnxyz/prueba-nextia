@@ -48,9 +48,9 @@ class FirebaseDatabaseClient {
     }
     
     // Actualizar los datos de la foto de perfil
-    func updateUserData(_ user: User, name: String, phone: String) {
+    func updateUserData(_ user: User, name: String?, phone: String?) {
         
-        let data = [nameKey: name, phoneNumberKey: phone]
+        let data = [nameKey: name, phoneNumberKey: phone] as [String : AnyObject]
         
         // Publicar cambios en Firebase
         usersReference.child(user.uid).updateChildValues(data)
