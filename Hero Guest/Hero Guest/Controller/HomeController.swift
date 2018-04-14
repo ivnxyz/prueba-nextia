@@ -124,8 +124,16 @@ class HomeController: UIViewController {
                 
                 // Mostrar datos
                 self.mailTextFieldView.setText(userProfile.email)
-                self.nameTextFieldView.setText(userProfile.name)
-                self.phoneNumberTextFieldView.setText(userProfile.phoneNumber)
+                
+                // Estos datos pueden no mostrarse ya que son opcionales, pero el usuario podrá agregar sus datos y actualizar su perfil
+                
+                if let name = userProfile.name {
+                    self.nameTextFieldView.setText(name)
+                }
+                
+                if let phoneNumber = userProfile.phoneNumber {
+                    self.phoneNumberTextFieldView.setText(phoneNumber)
+                }
             }
         }
     }
