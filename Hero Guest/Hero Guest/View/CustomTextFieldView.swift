@@ -96,6 +96,8 @@ class CustomTextFieldView: UIView {
     @objc func textFieldEditingDidChange(_ textField: UITextField) {
         // Cambiar el icono acompañando a la imagen
         if let text = textField.text, text != "" {
+            print("Sí hay texto")
+            print(text)
             iconImageView.image = iconImage
             isTextEmpty = false
         } else {
@@ -116,7 +118,7 @@ class CustomTextFieldView: UIView {
     
     func set(text: String) {
         textField.text = text
-        iconImageView.image = iconImage
+        self.textFieldEditingDidChange(textField)
     }
     
     func getText() -> String? {
