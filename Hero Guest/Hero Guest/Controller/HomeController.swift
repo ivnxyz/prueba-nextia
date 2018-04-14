@@ -121,7 +121,12 @@ class HomeController: UIViewController {
             updateProfileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        // Agregar target al botón
+        // Agregar botón para cerrar sesión
+        let signOutButton = UIBarButtonItem(title: "Cerrar sesión", style: UIBarButtonItemStyle.plain, target: self, action: #selector(signOut))
+        signOutButton.tintColor = APP_MAIN_COLOR
+        navigationItem.rightBarButtonItem = signOutButton
+        
+        // Agregar target al botón de actualizar perfil
         updateProfileButton.addTarget(self, action: #selector(self.updateUserProfile(_:)), for: .touchUpInside)
         
         // Obtener usuario
@@ -190,6 +195,19 @@ class HomeController: UIViewController {
         // Actualizar perfil del usuario
         if let user = Auth.auth().currentUser {
             firebaseDatabaseClient.updateUserData(user, firstName: firstName, lastName: lastName, phone: phone)
+        }
+    }
+    
+    // Cerrar sesión
+    @objc func signOut() {
+        do {
+            try Auth.auth().signOut()
+            // Regresar a la pantalla de inicio
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateInitialViewController()!
+            present(controller, animated: false, completion: nil)
+        } catch let error {
+            ErrorHandler.handle(error, from: self)
         }
     }
 
