@@ -18,6 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Configurar Firebase
         FirebaseApp.configure()
+        
+        // Configurar viewController inicial
+        let mainViewController: UIViewController
+        
+        // Determinar pantalla de inicio
+        if let user = Auth.auth().currentUser, user.isEmailVerified {
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            mainViewController = storyboard.instantiateInitialViewController()!
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            mainViewController = storyboard.instantiateInitialViewController()!
+        }
+        
+        window?.rootViewController = mainViewController
+        
         return true
     }
 

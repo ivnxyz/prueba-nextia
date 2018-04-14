@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInController: UIViewController {
     
@@ -133,6 +134,20 @@ class SignInController: UIViewController {
         
         return button
     }()
+    
+    lazy var emailIsNotVerifiedAlertView: UIAlertController = {
+        let alertController = UIAlertController(
+            title: "Email no verificado",
+            message: "Por favor verifica tu cuenta de correo",
+            preferredStyle: .alert
+        )
+        
+        // Añadir botón OK a la alerta
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        
+        return alertController
+    }()
 
     // MARK: - ViewDidLoad
     
@@ -208,6 +223,20 @@ class SignInController: UIViewController {
         registerForKeyboardNotifications()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // Obtener estado del usuario
+        if let user = Auth.auth().currentUser {
+            // Recargar usuario para determinar si ha verificado su correo
+            user.reload { (error) in
+                if error == nil {
+                    if user.isEmailVerified {
+                        self.showHomeController()
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - ViewWillDisappear
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -215,6 +244,7 @@ class SignInController: UIViewController {
     }
     
     // MARK: - Iniciar sesión
+    
     @objc func signInButtonPressed() {
         let firebaseClient = FirebaseAuthClient()
         
@@ -226,8 +256,21 @@ class SignInController: UIViewController {
             }
             
             // Mostrar alerta para que el usuario revise su correo
-            print(user.isEmailVerified)
+            if !user.isEmailVerified {
+                self.present(self.emailIsNotVerifiedAlertView, animated: true, completion: nil)
+            } else {
+                self.showHomeController()
+            }
         }
+    }
+    
+    // MARK: - Helper
+    
+    func showHomeController() {
+        // Mostrar pantalla de inicio
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController()!
+        self.present(controller, animated: false, completion: nil)
     }
     
 }
