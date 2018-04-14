@@ -93,6 +93,18 @@ class SignInController: UIViewController {
         return button
     }()
     
+    lazy var buttonsStackView: UIStackView = {
+        let stackView = UIStackView()
+        
+        // Configurar stackView
+        stackView.axis = UILayoutConstraintAxis.vertical
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = .red
+        
+        return stackView
+    }()
+ 
     lazy var moreInfoButton: UIButton = {
         let button = UIButton(type: .system)
         
@@ -136,15 +148,17 @@ class SignInController: UIViewController {
         
         // Configurar vistas
         view.addSubview(textFieldsStackView)
+        view.addSubview(buttonsStackView)
         view.addSubview(logoImageView)
-        view.addSubview(recoverPasswordButton)
-        view.addSubview(signInButton)
-        view.addSubview(moreInfoButton)
         
         textFieldsStackView.addArrangedSubview(mailTextFieldView)
         textFieldsStackView.addArrangedSubview(passwordTextFieldView)
         
-        // Configurar layout del stackView
+        buttonsStackView.addArrangedSubview(recoverPasswordButton)
+        buttonsStackView.addArrangedSubview(signInButton)
+        buttonsStackView.addArrangedSubview(moreInfoButton)
+        
+        // Configurar layout del stackView de campos de texto
         NSLayoutConstraint.activate([
             textFieldsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textFieldsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
@@ -172,25 +186,18 @@ class SignInController: UIViewController {
         ])
         
         // Configurar layout del botón para iniciar sesión
+        
         NSLayoutConstraint.activate([
-            signInButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 90),
-            signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
-            signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            signInButton.heightAnchor.constraint(equalToConstant: 45)
         ])
         
-        // Configurar layout del botón para recuperar contraseña
-        NSLayoutConstraint.activate([
-            recoverPasswordButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 25),
-            recoverPasswordButton.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -25),
-            recoverPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        // Configurar layout del stackView de botones
         
-        // Configurar layout del botón para obtener más información
         NSLayoutConstraint.activate([
-            moreInfoButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 25),
-            moreInfoButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
-            moreInfoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            buttonsStackView.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 30),
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50)
         ])
     }
     
