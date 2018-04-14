@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeController: UIViewController {
     
@@ -62,6 +63,12 @@ class HomeController: UIViewController {
         
         return button
     }()
+    
+    // Cliente de la base de datos
+    lazy var firebaseDatabaseClient: FirebaseDatabaseClient = {
+        let databaseClient = FirebaseDatabaseClient()
+        return databaseClient
+    }()
 
     // MARK: - ViewDidLoad
     
@@ -102,6 +109,20 @@ class HomeController: UIViewController {
             updateProfileButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             updateProfileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        
+        // Obtener usuario
+        if let user = Auth.auth().currentUser {
+            firebaseDatabaseClient.getUserData(user) { (userProfile, error) in
+                // Mostrar datos del usuario
+                guard let userProfile = userProfile else {
+                    ErrorHandler.handle(error, from: self)
+                    return
+                }
+                
+                // Mostrar datos
+                
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
