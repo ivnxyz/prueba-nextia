@@ -8,6 +8,7 @@ target 'Hero Guest' do
   # Pods for Hero Guest
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'Hero GuestTests' do
     inherit! :search_paths
