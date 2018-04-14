@@ -13,14 +13,16 @@ class FirebaseUserProfile {
     // Atributos
     
     let email: String
-    let name: String?
+    let firstName: String?
+    let lastName: String?
     let phoneNumber: String?
     
     // Init
     
-    init(email: String, name: String?, phoneNumber: String?) {
-        self.name = name
+    init(email: String, firstName: String?, lastName: String?, phoneNumber: String?) {
+        self.firstName = firstName
         self.email = email
         self.phoneNumber = phoneNumber
+        self.lastName = lastName
     }
 }

@@ -12,7 +12,8 @@ import FirebaseDatabase
 class FirebaseDatabaseClient {
     
     private let phoneNumberKey = "phoneNumber"
-    private let nameKey = "name"
+    private let firstNameKey = "firstName"
+    private let lastNamekey = "lastName"
     
     // Crear referencia a la base de datos
     let usersReference = Database.database().reference().child("users")
@@ -22,7 +23,8 @@ class FirebaseDatabaseClient {
             if let data = snapshot.value as? [String: AnyObject] {
                 // Obtener datos
                 let phoneNumber = data[self.phoneNumberKey] as? String
-                let name = data[self.nameKey] as? String
+                let firstName = data[self.firstNameKey] as? String
+                let lastName = data[self.lastNamekey] as? String
                 
                 guard let email = user.email else {
                     completionHandler(nil, FirebaseError.userHasNoEmail)
@@ -31,7 +33,7 @@ class FirebaseDatabaseClient {
                 
                 
                 // Crear perfil del usuario
-                let profile = FirebaseUserProfile(email: email, name: name, phoneNumber: phoneNumber)
+                let profile = FirebaseUserProfile(email: email, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber)
                 completionHandler(profile, nil)
             } else {
                 // El usuario no tiene datos en la base de datos
@@ -41,16 +43,16 @@ class FirebaseDatabaseClient {
                 }
                 
                 // Crear perfil del usuario
-                let profile = FirebaseUserProfile(email: email, name: nil, phoneNumber: nil)
+                let profile = FirebaseUserProfile(email: email, firstName: nil, lastName: nil, phoneNumber: nil)
                 completionHandler(profile, nil)
             }
         }
     }
     
     // Actualizar los datos de la foto de perfil
-    func updateUserData(_ user: User, name: String?, phone: String?) {
+    func updateUserData(_ user: User, firstName: String?, lastName: String?,phone: String?) {
         
-        let data = [nameKey: name, phoneNumberKey: phone] as [String : AnyObject]
+        let data = [firstNameKey: firstName, lastNamekey: lastName,phoneNumberKey: phone] as [String : AnyObject]
         
         // Publicar cambios en Firebase
         usersReference.child(user.uid).updateChildValues(data)

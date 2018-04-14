@@ -138,8 +138,12 @@ class HomeController: UIViewController {
                 
                 // Estos datos pueden no mostrarse ya que son opcionales, pero el usuario podrá agregar sus datos y actualizar su perfil
                 
-                if let name = userProfile.name {
-                    self.firstNameTextFieldView.set(text: name)
+                if let firstName = userProfile.firstName {
+                    self.firstNameTextFieldView.set(text: firstName)
+                }
+                
+                if let lastName = userProfile.lastName {
+                    self.lastNameTextFieldView.set(text: lastName)
                 }
                 
                 if let phoneNumber = userProfile.phoneNumber {
@@ -179,12 +183,13 @@ class HomeController: UIViewController {
     }
     
     @objc func updateUserProfile(_ sender: UIButton) {
-        let name = firstNameTextFieldView.getText()
+        let firstName = firstNameTextFieldView.getText()
+        let lastName = lastNameTextFieldView.getText()
         let phone = phoneNumberTextFieldView.getText()
         
         // Actualizar perfil del usuario
         if let user = Auth.auth().currentUser {
-            firebaseDatabaseClient.updateUserData(user, name: name, phone: phone)
+            firebaseDatabaseClient.updateUserData(user, firstName: firstName, lastName: lastName, phone: phone)
         }
     }
 
@@ -207,7 +212,7 @@ extension HomeController {
     // Responder a la notificación del teclado
     @objc func keyboardWillShow(notification: Notification) {
         // Centrar las entradas de texto
-        let keyboardHeight = getKeyboardHeight(notification: notification) - textFieldsStackView.frame.height
+        let keyboardHeight = getKeyboardHeight(notification: notification) - textFieldsStackView.frame.height/2
         
         // Animar view
         UIView.animate(withDuration: 0.1) {
