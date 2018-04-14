@@ -118,8 +118,9 @@ class CustomTextFieldView: UIView {
         return true
     }
     
-    func setText(_ string: String) {
-        textField.text = string
+    func set(text: String) {
+        textField.text = text
+        textFieldText = text
         iconImageView.image = iconImage
     }
     
