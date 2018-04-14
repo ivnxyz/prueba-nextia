@@ -18,8 +18,14 @@ class FirebaseDatabaseClient {
         usersReference.child(user.uid).observe(.value) { (snapshot) in
             if let data = snapshot.value as? [String: AnyObject] {
                 // Obtener datos
-                print("Mostrando datos...")
-                print(data)
+                guard let phoneNumber = data["phoneNumber"] as? String, let name = data["name"] as? String, let email = user.email else {
+                    completionHandler(nil, FirebaseError.notEnoughtData)
+                    return
+                }
+                
+                // Crear perfil del usuario
+                let profile = FirebaseUserProfile(name: name, email: email, phoneNumber: phoneNumber)
+                completionHandler(profile, nil)
             } else {
                 // El usuario no tiene datos en la base de datos
                 guard let email = user.email else {
@@ -32,6 +38,15 @@ class FirebaseDatabaseClient {
                 completionHandler(profile, nil)
             }
         }
+    }
+    
+    // Actualizar los datos de la foto de perfil
+    func updateUserData(_ user: User, name: String, phone: String) {
+        
+        let data = ["name": name, "phoneNumber": phone]
+        
+        // Publicar cambios en Firebase
+        usersReference.child(user.uid).updateChildValues(data)
     }
     
 }

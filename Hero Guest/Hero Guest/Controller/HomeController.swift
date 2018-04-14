@@ -76,7 +76,7 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         
         // Configurar tabGestureRecognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:)))
         self.view.addGestureRecognizer(tapGesture)
         
         // Colocar vistas
@@ -110,6 +110,9 @@ class HomeController: UIViewController {
             updateProfileButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
+        // Agregar target al botón
+        updateProfileButton.addTarget(self, action: #selector(self.updateUserProfile(_:)), for: .touchUpInside)
+        
         // Obtener usuario
         if let user = Auth.auth().currentUser {
             firebaseDatabaseClient.getUserData(user) { (userProfile, error) in
@@ -121,6 +124,8 @@ class HomeController: UIViewController {
                 
                 // Mostrar datos
                 self.mailTextFieldView.setText(userProfile.email)
+                self.nameTextFieldView.setText(userProfile.name)
+                self.phoneNumberTextFieldView.setText(userProfile.phoneNumber)
             }
         }
     }
@@ -151,6 +156,16 @@ class HomeController: UIViewController {
         _ = mailTextFieldView.resignFirstResponder()
         _ = nameTextFieldView.resignFirstResponder()
         _ = phoneNumberTextFieldView.resignFirstResponder()
+    }
+    
+    @objc func updateUserProfile(_ sender: UIButton) {
+        let name = nameTextFieldView.textFieldText
+        let phone = phoneNumberTextFieldView.textFieldText
+        
+        // Actualizar perfil del usuario
+        if let user = Auth.auth().currentUser {
+            firebaseDatabaseClient.updateUserData(user, name: name, phone: phone)
+        }
     }
 
 }

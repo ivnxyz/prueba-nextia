@@ -10,6 +10,7 @@ import Foundation
 
 enum FirebaseError: Error {
     case userHasNoEmail
+    case notEnoughtData
 }
 
 extension FirebaseError: LocalizedError {
@@ -17,6 +18,8 @@ extension FirebaseError: LocalizedError {
         switch self {
         case .userHasNoEmail:
             return "El usuario no tiene un correo registrado"
+        case .notEnoughtData:
+            return "No hay suficientes datos del usuario"
         }
     }
 }
