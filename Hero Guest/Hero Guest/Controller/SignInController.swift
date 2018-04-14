@@ -223,20 +223,6 @@ class SignInController: UIViewController {
         registerForKeyboardNotifications()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        // Obtener estado del usuario
-        if let user = Auth.auth().currentUser {
-            // Recargar usuario para determinar si ha verificado su correo
-            user.reload { (error) in
-                if error == nil {
-                    if user.isEmailVerified {
-                        self.showHomeController()
-                    }
-                }
-            }
-        }
-    }
-    
     // MARK: - ViewWillDisappear
     
     override func viewWillDisappear(_ animated: Bool) {
