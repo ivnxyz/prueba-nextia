@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class SignInController: UIViewController {
     
-    private let mailTextFieldIdentifier = "mailTextField"
+    private let emailTextFieldIdentifier = "mailTextField"
     private let passwordTextFieldIdentifier = "passwordTextField"
     
     private var isMailTextFieldEmpty = true
@@ -19,12 +19,12 @@ class SignInController: UIViewController {
     
     // MARK: - Elementos de UI
     
-    lazy var mailTextFieldView: CustomTextFieldView = {
+    lazy var emailTextFieldView: CustomTextFieldView = {
         let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "mail_icon"), unactiveIconImage: #imageLiteral(resourceName: "mail_icon_gray"), placeholder: "Correo", keyboardType: UIKeyboardType.emailAddress)
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
-        textFieldView.identifier = mailTextFieldIdentifier
+        textFieldView.identifier = emailTextFieldIdentifier
         textFieldView.delegate = self
         
         return textFieldView
@@ -166,7 +166,7 @@ class SignInController: UIViewController {
         view.addSubview(buttonsStackView)
         view.addSubview(logoImageView)
         
-        textFieldsStackView.addArrangedSubview(mailTextFieldView)
+        textFieldsStackView.addArrangedSubview(emailTextFieldView)
         textFieldsStackView.addArrangedSubview(passwordTextFieldView)
         
         buttonsStackView.addArrangedSubview(recoverPasswordButton)
@@ -181,9 +181,9 @@ class SignInController: UIViewController {
         
         // Configurar layout de los textFields
         NSLayoutConstraint.activate([
-            mailTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            mailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            mailTextFieldView.heightAnchor.constraint(equalToConstant: 60)
+            emailTextFieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            emailTextFieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            emailTextFieldView.heightAnchor.constraint(equalToConstant: 60)
         ])
 
         NSLayoutConstraint.activate([
@@ -235,7 +235,7 @@ class SignInController: UIViewController {
         let firebaseClient = FirebaseAuthClient()
         
         // Si el usuario no escribió alguno de los campos usamos un String vacío para que Firebase maneje el caso de error
-        let email = mailTextFieldView.getText() != nil ? mailTextFieldView.getText()! : ""
+        let email = emailTextFieldView.getText() != nil ? emailTextFieldView.getText()! : ""
         let password = passwordTextFieldView.getText() != nil ? passwordTextFieldView.getText()! : ""
         
         firebaseClient.signInWith(email: email, password: password) { (user, error)  in
@@ -315,7 +315,7 @@ extension SignInController {
 extension SignInController {
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        _ = mailTextFieldView.resignFirstResponder()
+        _ = emailTextFieldView.resignFirstResponder()
         _ = passwordTextFieldView.resignFirstResponder()
     }
     
@@ -326,7 +326,7 @@ extension SignInController: CustomTextFieldViewDelegate {
     // MARK: - CustomTextFieldViewDelegate
     
     func textFieldEditingDidChange(_ customTextFieldView: CustomTextFieldView) {
-        if customTextFieldView.identifier == mailTextFieldIdentifier {
+        if customTextFieldView.identifier == emailTextFieldIdentifier {
             // Actualizar el estado del
             isMailTextFieldEmpty = customTextFieldView.isTextEmpty
         } else if customTextFieldView.identifier == passwordTextFieldIdentifier {
