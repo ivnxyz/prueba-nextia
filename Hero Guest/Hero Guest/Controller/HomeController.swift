@@ -25,8 +25,17 @@ class HomeController: UIViewController {
         return textFieldView
     }()
     
-    lazy var nameTextFieldView: CustomTextFieldView = {
+    lazy var firstNameTextFieldView: CustomTextFieldView = {
         let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "user_icon"), unactiveIconImage: #imageLiteral(resourceName: "user_icon_gray"), placeholder: "Nombre", keyboardType: UIKeyboardType.default)
+        
+        // Configurar textFieldView
+        textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textFieldView
+    }()
+    
+    lazy var lastNameTextFieldView: CustomTextFieldView = {
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "user_icon"), unactiveIconImage: #imageLiteral(resourceName: "user_icon_gray"), placeholder: "Apellido", keyboardType: UIKeyboardType.default)
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +94,8 @@ class HomeController: UIViewController {
         
         // Colocar StackView
         textFieldsStackView.addArrangedSubview(mailTextFieldView)
-        textFieldsStackView.addArrangedSubview(nameTextFieldView)
+        textFieldsStackView.addArrangedSubview(firstNameTextFieldView)
+        textFieldsStackView.addArrangedSubview(lastNameTextFieldView)
         textFieldsStackView.addArrangedSubview(phoneNumberTextFieldView)
         
         // Configurar layout del stackView
@@ -98,7 +108,8 @@ class HomeController: UIViewController {
         configureTextFieldConstraints(textFieldView: mailTextFieldView)
         
         // Configurar layout de nameTextFieldView
-        configureTextFieldConstraints(textFieldView: nameTextFieldView)
+        configureTextFieldConstraints(textFieldView: firstNameTextFieldView)
+        configureTextFieldConstraints(textFieldView: lastNameTextFieldView)
         
         // Configurar layout de phoneTextFieldView
         configureTextFieldConstraints(textFieldView: phoneNumberTextFieldView)
@@ -128,7 +139,7 @@ class HomeController: UIViewController {
                 // Estos datos pueden no mostrarse ya que son opcionales, pero el usuario podrá agregar sus datos y actualizar su perfil
                 
                 if let name = userProfile.name {
-                    self.nameTextFieldView.set(text: name)
+                    self.firstNameTextFieldView.set(text: name)
                 }
                 
                 if let phoneNumber = userProfile.phoneNumber {
@@ -162,12 +173,13 @@ class HomeController: UIViewController {
     // Ignorar los campos de texto
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         _ = mailTextFieldView.resignFirstResponder()
-        _ = nameTextFieldView.resignFirstResponder()
+        _ = firstNameTextFieldView.resignFirstResponder()
+        _ = lastNameTextFieldView.resignFirstResponder()
         _ = phoneNumberTextFieldView.resignFirstResponder()
     }
     
     @objc func updateUserProfile(_ sender: UIButton) {
-        let name = nameTextFieldView.getText()
+        let name = firstNameTextFieldView.getText()
         let phone = phoneNumberTextFieldView.getText()
         
         // Actualizar perfil del usuario
