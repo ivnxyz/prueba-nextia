@@ -44,7 +44,7 @@ class HomeController: UIViewController {
     }()
     
     lazy var phoneNumberTextFieldView: CustomTextFieldView = {
-        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "phone_icon"), unactiveIconImage: #imageLiteral(resourceName: "phone_icon_gray"), placeholder: "Teléfono", keyboardType: UIKeyboardType.default)
+        let textFieldView = CustomTextFieldView(iconImage: #imageLiteral(resourceName: "phone_icon"), unactiveIconImage: #imageLiteral(resourceName: "phone_icon_gray"), placeholder: "Teléfono", keyboardType: UIKeyboardType.numberPad)
         
         // Configurar textFieldView
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
