@@ -120,7 +120,7 @@ class HomeController: UIViewController {
                 }
                 
                 // Mostrar datos
-                
+                self.mailTextFieldView.setText(userProfile.email)
             }
         }
     }
